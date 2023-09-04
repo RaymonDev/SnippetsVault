@@ -15,7 +15,7 @@
 * [Java](Java/java_snippets.md)
 * [JavaScript](JavaScript/javascript_snippets.md)
 * [C++](CPP/cpp_snippets.md)
-* C#
+* [C#](Csharp/csharp_snippets.md)
 * Ruby
 * Go (Golang)
 * Swift
