@@ -14,7 +14,7 @@
 * [Python](Python/python_snippets.md)
 * [Java](Java/java_snippets.md)
 * [JavaScript](JavaScript/javascript_snippets.md)
-* C++
+* [C++](CPP/cpp_snippets.md)
 * C#
 * Ruby
 * Go (Golang)
