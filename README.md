@@ -18,7 +18,7 @@
 * [C#](Csharp/csharp_snippets.md)
 * [Ruby](Ruby/ruby_snippets.md)
 * [Go (Golang)](Golang/golang_snippets.md)
-* Swift
+* [Swift](Swift/swift_snippets.md)
 * PHP
 * Rust
 * SQL
