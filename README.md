@@ -17,7 +17,7 @@
 * [C++](CPP/cpp_snippets.md)
 * [C#](Csharp/csharp_snippets.md)
 * [Ruby](Ruby/ruby_snippets.md)
-* Go (Golang)
+* [Go (Golang)](Golang/golang_snippets.md)
 * Swift
 * PHP
 * Rust
