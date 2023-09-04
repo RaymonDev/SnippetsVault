@@ -788,19 +788,3 @@ func main() {
     }
 }
 ```
-
-### Package Documentation (godoc and godoc.org)
-```go
-// Package math provides basic math functions.
-package math
-
-// Add returns the sum of two integers.
-func Add(a, b int) int {
-    return a + b
-}
-
-// Subtract returns the difference between two integers.
-func Subtract(a, b int) int {
-    return a - b
-}
-```
