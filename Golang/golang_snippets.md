@@ -343,18 +343,464 @@ func main() {
 }
 ```
 
+### Goroutines and Channels (Fan-out, Fan-in)
+```go
+func worker(id int, jobs <-chan int, results chan<- int) {
+    for j := range jobs {
+        results <- j * 2
+    }
+}
 
+func main() {
+    jobs := make(chan int, 100)
+    results := make(chan int, 100)
+    
+    // Start workers
+    for w := 1; w <= 3; w++ {
+        go worker(w, jobs, results)
+    }
+    
+    // Send jobs
+    for j := 1; j <= 9; j++ {
+        jobs <- j
+    }
+    close(jobs)
+    
+    // Collect results
+    for a := 1; a <= 9; a++ {
+        <-results
+    }
+}
+```
 
+### Mutexes and Synchronization (Mutex)
+```go
+import "sync"
 
+var counter int
+var mu sync.Mutex
 
+func increment() {
+    mu.Lock()
+    counter++
+    mu.Unlock()
+}
 
+func main() {
+    var wg sync.WaitGroup
+    for i := 0; i < 1000; i++ {
+        wg.Add(1)
+        go func() {
+            defer wg.Done()
+            increment()
+        }()
+    }
+    wg.Wait()
+    println("Counter:", counter)
+}
+```
 
+### Defer Statement and Recovery (Panic and Recover)
+```go
+func recoverDemo() {
+    defer func() {
+        if r := recover(); r != nil {
+            fmt.Println("Recovered:", r)
+        }
+    }()
+    
+    panic("Panic!")
+}
 
+func main() {
+    recoverDemo()
+    fmt.Println("After panic")
+}
+```
 
+### Reflection (reflect package)
+```go
+import (
+    "fmt"
+    "reflect"
+)
 
+type Person struct {
+    Name string
+    Age  int
+}
 
+func main() {
+    p := Person{"Alice", 30}
+    valueType := reflect.TypeOf(p)
+    fmt.Println("Type:", valueType)
+    
+    value := reflect.ValueOf(p)
+    fmt.Println("Fields:")
+    for i := 0; i < value.NumField(); i++ {
+        field := value.Field(i)
+        fmt.Printf("%s: %v\n", valueType.Field(i).Name, field.Interface())
+    }
+}
+```
 
+### Function Closure
+```go
+func generateAdder(a int) func(int) int {
+    return func(b int) int {
+        return a + b
+    }
+}
 
+func main() {
+    add5 := generateAdder(5)
+    result := add5(10)
+    fmt.Println("Result:", result)
+}
+```
 
+### Custom errors
+```go
+type MyError struct {
+    Message string
+}
 
+func (e *MyError) Error() string {
+    return e.Message
+}
 
+func myFunction() error {
+    return &MyError{"Custom error message"}
+}
+
+func main() {
+    if err := myFunction(); err != nil {
+        fmt.Println("Error:", err)
+    }
+}
+```
+
+### Context Package (Cancellation and Timeout)
+```go
+import (
+    "context"
+    "fmt"
+    "time"
+)
+
+func myFunction(ctx context.Context) {
+    select {
+    case <-time.After(2 * time.Second):
+        fmt.Println("Task completed")
+    case <-ctx.Done():
+        fmt.Println("Task canceled")
+    }
+}
+
+func main() {
+    ctx, cancel := context.WithTimeout(context.Background(), 1*time.Second)
+    defer cancel()
+    myFunction(ctx)
+}
+```
+
+### Working with JSON (Unmarshalling into Structs)
+```go
+import (
+    "encoding/json"
+    "fmt"
+)
+
+type Person struct {
+    Name string `json:"name"`
+    Age  int    `json:"age"`
+}
+
+func main() {
+    jsonString := `{"name":"Alice","age":25}`
+    var person Person
+    if err := json.Unmarshal([]byte(jsonString), &person); err != nil {
+        fmt.Println("Error:", err)
+        return
+    }
+    fmt.Printf("Name: %s, Age: %d\n", person.Name, person.Age)
+}
+```
+
+### Working with Time (time package)
+```go
+import (
+    "fmt"
+    "time"
+)
+
+func main() {
+    currentTime := time.Now()
+    fmt.Println("Current Time:", currentTime)
+    
+    tomorrow := currentTime.Add(24 * time.Hour)
+    fmt.Println("Tomorrow:", tomorrow)
+}
+```
+
+### HTTP Server and Client (net/http package)
+```go
+import (
+    "fmt"
+    "net/http"
+)
+
+func helloHandler(w http.ResponseWriter, r *http.Request) {
+    fmt.Fprintln(w, "Hello, World!")
+}
+
+func main() {
+    http.HandleFunc("/hello", helloHandler)
+    http.ListenAndServe(":8080", nil)
+}
+```
+
+### Creating and using interfaces
+```go
+type Shape interface {
+    Area() float64
+}
+
+type Circle struct {
+    Radius float64
+}
+
+func (c Circle) Area() float64 {
+    return 3.14 * c.Radius * c.Radius
+}
+
+type Square struct {
+    SideLength float64
+}
+
+func (s Square) Area() float64 {
+    return s.SideLength * s.SideLength
+}
+
+func main() {
+    c := Circle{Radius: 5}
+    s := Square{SideLength: 4}
+    
+    shapes := []Shape{c, s}
+    for _, shape := range shapes {
+        fmt.Printf("Area: %f\n", shape.Area())
+    }
+}
+```
+
+### Function variadic parameters
+```go
+func sum(numbers ...int) int {
+    total := 0
+    for _, num := range numbers {
+        total += num
+    }
+    return total
+}
+
+func main() {
+    result := sum(1, 2, 3, 4, 5)
+    fmt.Println("Sum:", result)
+}
+```
+
+### Working with Templates (html/template package)
+```go
+import (
+    "html/template"
+    "os"
+)
+
+type Person struct {
+    Name string
+    Age  int
+}
+
+func main() {
+    tmpl, _ := template.New("example").Parse("Name: {{.Name}}, Age: {{.Age}}\n")
+    person := Person{Name: "Alice", Age: 25}
+    tmpl.Execute(os.Stdout, person)
+}
+```
+
+### Web Routing with Gorilla Mux (gorilla/mux package)
+```go
+import (
+    "fmt"
+    "net/http"
+    "github.com/gorilla/mux"
+)
+
+func helloHandler(w http.ResponseWriter, r *http.Request) {
+    fmt.Fprintln(w, "Hello, World!")
+}
+
+func main() {
+    r := mux.NewRouter()
+    r.HandleFunc("/hello", helloHandler)
+    
+    http.Handle("/", r)
+    http.ListenAndServe(":8080", nil)
+}
+```
+
+### Custom Middleware in HTTP Handlers
+```go
+import (
+    "fmt"
+    "net/http"
+)
+
+func loggingMiddleware(next http.Handler) http.Handler {
+    return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+        fmt.Println("Request received:", r.URL.Path)
+        next.ServeHTTP(w, r)
+    })
+}
+
+func helloHandler(w http.ResponseWriter, r *http.Request) {
+    fmt.Fprintln(w, "Hello, World!")
+}
+
+func main() {
+    r := http.NewServeMux()
+    r.HandleFunc("/hello", helloHandler)
+    
+    http.Handle("/", loggingMiddleware(r))
+    http.ListenAndServe(":8080", nil)
+}
+```
+
+### Database Access with SQL (database/sql package)
+```go
+import (
+    "database/sql"
+    "fmt"
+    _ "github.com/go-sql-driver/mysql"
+)
+
+func main() {
+    db, err := sql.Open("mysql", "user:password@tcp(localhost:3306)/database")
+    if err != nil {
+        fmt.Println("Error:", err)
+        return
+    }
+    defer db.Close()
+    
+    rows, err := db.Query("SELECT name FROM users WHERE age > ?", 25)
+    if err != nil {
+        fmt.Println("Error:", err)
+        return
+    }
+    defer rows.Close()
+    
+    for rows.Next() {
+        var name string
+        err := rows.Scan(&name)
+        if err != nil {
+            fmt.Println("Error:", err)
+            return
+        }
+        fmt.Println("Name:", name)
+    }
+}
+```
+
+### Concurrent Map Access (sync.Map)
+```go
+import (
+    "fmt"
+    "sync"
+)
+
+func main() {
+    var m sync.Map
+    
+    m.Store("key1", "value1")
+    m.Store("key2", "value2")
+    
+    value, ok := m.Load("key1")
+    if ok {
+        fmt.Println("Value:", value)
+    }
+    
+    m.Delete("key2")
+}
+```
+
+### Panic and Recover in Goroutines
+```go
+import (
+    "fmt"
+    "time"
+)
+
+func recoverInGoroutine() {
+    defer func() {
+        if r := recover(); r != nil {
+            fmt.Println("Recovered in goroutine:", r)
+        }
+    }()
+    
+    panic("Goroutine panic")
+}
+
+func main() {
+    go recoverInGoroutine()
+    time.Sleep(time.Second)
+}
+```
+
+### Custom Sort Function (sort package)
+```go
+import (
+    "fmt"
+    "sort"
+)
+
+type Person struct {
+    Name string
+    Age  int
+}
+
+type ByAge []Person
+
+func (a ByAge) Len() int           { return len(a) }
+func (a ByAge) Swap(i, j int)      { a[i], a[j] = a[j], a[i] }
+func (a ByAge) Less(i, j int) bool { return a[i].Age < a[j].Age }
+
+func main() {
+    people := []Person{
+        {"Alice", 30},
+        {"Bob", 25},
+        {"Charlie", 35},
+    }
+    
+    sort.Sort(ByAge(people))
+    
+    for _, p := range people {
+        fmt.Printf("Name: %s, Age: %d\n", p.Name, p.Age)
+    }
+}
+```
+
+### Package Documentation (godoc and godoc.org)
+```go
+// Package math provides basic math functions.
+package math
+
+// Add returns the sum of two integers.
+func Add(a, b int) int {
+    return a + b
+}
+
+// Subtract returns the difference between two integers.
+func Subtract(a, b int) int {
+    return a - b
+}
+```
