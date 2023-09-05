@@ -25,7 +25,7 @@
 * [TypeScript](TypeScript/typescript_snippets.md)
 * [Kotlin](Kotlin/kotlin_snippets.md)
 * [Scala](Scala/scala_snippets.md)
-* Perl
+* [Perl](Perl/perl_snippets.md)
 * Haskell
 * Swift
 * HTML
