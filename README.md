@@ -20,8 +20,8 @@
 * [Go (Golang)](Golang/golang_snippets.md)
 * [Swift](Swift/swift_snippets.md)
 * [PHP](PHP/php_snippets.md)
-* Rust
-* SQL
+* [Rust](Rust/rust_snippets.md)
+* [SQL](SQL/sql_snippets.md)
 * TypeScript
 * Kotlin
 * Scala
