@@ -23,7 +23,7 @@
 * [Rust](Rust/rust_snippets.md)
 * [SQL](SQL/sql_snippets.md)
 * [TypeScript](TypeScript/typescript_snippets.md)
-* Kotlin
+* [Kotlin](Kotlin/kotlin_snippets.md)
 * Scala
 * Perl
 * Haskell
