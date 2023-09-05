@@ -22,7 +22,7 @@
 * [PHP](PHP/php_snippets.md)
 * [Rust](Rust/rust_snippets.md)
 * [SQL](SQL/sql_snippets.md)
-* TypeScript
+* [TypeScript](TypeScript/typescript_snippets.md)
 * Kotlin
 * Scala
 * Perl
