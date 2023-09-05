@@ -24,7 +24,7 @@
 * [SQL](SQL/sql_snippets.md)
 * [TypeScript](TypeScript/typescript_snippets.md)
 * [Kotlin](Kotlin/kotlin_snippets.md)
-* Scala
+* [Scala](Scala/scala_snippets.md)
 * Perl
 * Haskell
 * Swift
