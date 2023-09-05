@@ -19,7 +19,7 @@
 * [Ruby](Ruby/ruby_snippets.md)
 * [Go (Golang)](Golang/golang_snippets.md)
 * [Swift](Swift/swift_snippets.md)
-* PHP
+* [PHP](PHP/php_snippets.md)
 * Rust
 * SQL
 * TypeScript
