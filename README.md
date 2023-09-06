@@ -73,3 +73,9 @@ If you find this repository helpful and would like to support its development, y
 
 <br />
 
+<sup>Don't forget to contribute, all additions and help are much apreciated!!</sup>
+<br />
+<br />
+<br />
+<sup>Made with ❤️ by RaymonDev</sup>
+
