@@ -50,8 +50,6 @@
     - [Machine Learning](R/r_machinelearning_snippets.md)
     - [Geospatial analysis with sf package](R/r_geospatialanalysis_sf_snippets.md)
 
-* Assembly
-
 <br />
 
 ---
