@@ -15,6 +15,19 @@ Issues that are labeled 'help wanted' are a great place to start as they are spe
 
 Please note that the pull request should include a description of the changes and why you think they should be included.
 
+## Things To Do
+
+There are many areas you can contribute to. Here are a few suggestions:
+
+### Add subsections for specific languages and domains:
+
+We are looking to expand our repository with more specialized sections for various languages and domains. This includes, but not limited to:
+
+* Data Science
+* Machine Learning
+* Python Libraries like Pandas, Numpy, etc.
+
+
 ## Automated Issue Management
 
 We use GitHub Actions to help us manage issues. These Actions and their descriptions are aviable to everyone.
