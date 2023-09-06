@@ -39,7 +39,6 @@
     - [Multimedia](HTML/html_multimedia_snippets.md)
 * [CSS](CSS/css_snippets.md)
 * R
-* MATLAB
 * Assembly
 
 <br />
