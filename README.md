@@ -26,8 +26,7 @@
 * [Kotlin](Kotlin/kotlin_snippets.md)
 * [Scala](Scala/scala_snippets.md)
 * [Perl](Perl/perl_snippets.md)
-* Haskell
-* Swift
+* [Haskell](Haskell/haskell_snippets.md)
 * HTML
 * CSS
 * R
