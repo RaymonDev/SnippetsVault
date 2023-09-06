@@ -37,7 +37,7 @@
     - [Tables](HTML/html_tables_snippets.md)
     - [Semantic HTML](HTML/html_semantic_snippets.md)
     - [Multimedia](HTML/html_multimedia_snippets.md)
-* CSS
+* [CSS](CSS/css_snippets.md)
 * R
 * MATLAB
 * Assembly
