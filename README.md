@@ -38,7 +38,18 @@
     - [Semantic HTML](HTML/html_semantic_snippets.md)
     - [Multimedia](HTML/html_multimedia_snippets.md)
 * [CSS](CSS/css_snippets.md)
-* R
+* [R](R/r_snippets.md)
+    - [Data Manipulation](R/r_datamanipulation_snippets.md)
+    - [Data analysis](R/r_datanalysis_snippets.md)
+    - [Data Visualization](R/r_datavisualization_snippets.md)
+    - [Data Cleaning](R/r_datacleaning_snippets.md)
+    - [Data Import/Export](R/r_dataimportexport_snippets.md)
+    - [Looping and Control structures](R/r_loopingandcontrol_snippets.md)
+    - [Functions](R/r_functions_snippets.md)
+    - [Statistics](R/r_statistics_snippets.md)
+    - [Machine Learning](R/r_machinelearning_snippets.md)
+    - [Geospatial analysis with sf package](R/r_geospatialanalysis_sf_snippets.md)
+
 * Assembly
 
 <br />
