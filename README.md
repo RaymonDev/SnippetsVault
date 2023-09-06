@@ -12,8 +12,6 @@
 ## Index
 
 * [Python](Python/python_snippets.md)
-    - Test
-
 * [Java](Java/java_snippets.md)
 * [JavaScript](JavaScript/javascript_snippets.md)
 * [C++](CPP/cpp_snippets.md)
@@ -30,6 +28,15 @@
 * [Perl](Perl/perl_snippets.md)
 * [Haskell](Haskell/haskell_snippets.md)
 * [HTML](HTML/html_snippets.md)
+    - [Basic Structure](HTML/html_snippets.md)
+    - [Text and headings](HTML/html_textandheadings_snippets.md)
+    - [Lists](HTML/html_lists_snippets.md)
+    - [Links and anchors](HTML/html_linksanchors_snippets.md)
+    - [Images](HTML/html_images_snippets.md)
+    - [Forms](HTML/html_forms_snippets.md)
+    - [Tables](HTML/html_tables_snippets.md)
+    - [Semantic HTML](HTML/html_semantic_snippets.md)
+    - [Multimedia](HTML/html_multimedia_snippets.md)
 * CSS
 * R
 * MATLAB
