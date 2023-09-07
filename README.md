@@ -10,7 +10,7 @@
 
 <sup>Status</sup>
     
-![Categories](https://img.shields.io/badge/Categories-19-brightgreen) 
+![Categories](https://img.shields.io/badge/Categories-20-brightgreen) 
 ![Snippets](https://img.shields.io/badge/Snippets-1043-lightblue) 
 ![License](https://img.shields.io/badge/License-MIT-blue.svg)
 ![Contributions Welcome](https://img.shields.io/badge/Contributions-Welcome-brightgreen.svg)
