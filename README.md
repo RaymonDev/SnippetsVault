@@ -67,6 +67,20 @@ If you find this repository helpful and would like to support its development, y
     - [Machine Learning](R/r_machinelearning_snippets.md)
     - [Geospatial analysis with sf package](R/r_geospatialanalysis_sf_snippets.md)
 
+* [Dart](Dart/dart_getting_started_snippets.md)
+    - [Classes and objects](Dart/dart_classes_objects_snippets.md)
+    - [Collections](Dart/dart_collections_snippets.md)
+    - [Control Flows : Conditionals](Dart/dart_conditionals_snippets.md)
+    - [Control Flows : Loops](Dart/dart_loops_snippets.md)
+    - [Exceptions](Dart/dart_exceptions_snippets.md)
+    - [Functions](Dart/dart_functions_snippets.md)
+    - [Futures](Dart/dart_futures_snippets.md)
+    - [Implicit interfaces](Dart/dart_implicit_interface_snippets.md)
+    - [Misc](Dart/dart_miscellaneous_snippets.md)
+    - [Operators](Dart/dart_operators_snippets.md)
+
+
+
 <br />
 
 ---
