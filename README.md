@@ -18,14 +18,6 @@
 ![Dependencies Up to Date](https://img.shields.io/badge/Dependencies-Up%20to%20Date-brightgreen)
 </div>
 
-
-
-## Support This Project
-
-If you find this repository helpful and would like to support its development, you can make a donation. Your contributions help maintain and improve this project. Thank you for your generosity!
-
-<a href="https://ko-fi.com/raymondev" target="_blank"><img src="https://uploads-ssl.webflow.com/5c14e387dab576fe667689cf/61e11ddcc39341db4958c5cc_Supportbutton.png" alt="Buy Me A Coffee" height="41" width="174"></a>
-
 ## Index
 
 * [Python](Python/python_snippets.md)
